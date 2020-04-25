@@ -1,8 +1,11 @@
 import React from 'react'
 import './App.css'
 
+//components
+import Homepage from './pages/homepage/Homepage'
+
 function App() {
-	return <div>React Clothing</div>
+	return <Homepage />
 }
 
 export default App
