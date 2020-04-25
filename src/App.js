@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 import './App.css'
 
-//components
-import Homepage from './pages/homepage/Homepage'
+import HomePage from './pages/homepage/Homepage'
+
+const HatsPage = () => (
+	<div>
+		<h1>HATS PAGE </h1>
+	</div>
+)
 
 function App() {
-	return <Homepage />
+	return (
+		<Router>
+			<Fragment>
+				<Switch>
+					<Route exact path="/" component={HomePage} />
+					<Route path="/hats" component={HatsPage} />
+				</Switch>
+			</Fragment>
+		</Router>
+	)
 }
 
 export default App
