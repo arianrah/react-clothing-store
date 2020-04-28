@@ -18,18 +18,23 @@ class App extends React.Component {
 		}
 	}
 
-	//check firebase response (if authenticated)
+	//check firebase response (if authenticated) "open subscription"
+	unsubscribeFromAuth = null
 	componentDidMount() {
-		auth.onAuthStateChanged(u => {
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(u => {
 			this.setState({ currentUser: u })
 			console.log(u)
 		})
+	}
+
+	componentWillUnmount() {
+		this.unsubscribeFromAuth()
 	}
 	render() {
 		return (
 			<Router>
 				<Fragment>
-					<Header />
+					<Header currentUser={this.state.currentUser} />
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route path="/shop" component={ShopPage} />

@@ -11,13 +11,6 @@
 		padding: 25px;
 	}
 
-	.logo {
-		animation-duration: 10000ms;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-		animation-name: spin;
-	}
-
 	.options {
 		width: 50%;
 		height: 100%;
@@ -27,15 +20,7 @@
 
 		.option {
 			padding: 10px 15px;
+			cursor: pointer;
 		}
-	}
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
 	}
 }
